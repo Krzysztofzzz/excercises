@@ -1,8 +1,10 @@
 package krzych;
 
+import krzych.fibonacci_series.Fibonacci;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        new Fibonacci().run();
     }
 }
