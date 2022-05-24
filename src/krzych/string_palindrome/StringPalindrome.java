@@ -3,7 +3,7 @@ package krzych.string_palindrome;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Palindrome implements Runnable {
+public class StringPalindrome implements Runnable {
     @Override
     public void run() {
         //palindromeWithLibraries();
