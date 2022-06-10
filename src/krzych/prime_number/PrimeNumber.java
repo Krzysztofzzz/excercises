@@ -1,34 +1,18 @@
 package krzych.prime_number;
 
-import java.util.Scanner;
+public class PrimeNumber {
 
-public class PrimeNumber implements Runnable {
+    boolean isPrime(int numberToCheck) {
+        if (numberToCheck <= 0)
+            return false;
 
-    @Override
-    public void run() {
-        while (true) {
-            int numberToCheck = getNumber();
-            int halfNumberToCheck = numberToCheck / 2;
-            int flag = 0;
+        int halfNumberToCheck = numberToCheck / 2;
 
-            for (int i = 2; i <= halfNumberToCheck; i++) {
-                if (numberToCheck % i == 0) {
-                    System.out.println("Number: " + numberToCheck + " is not a prime...");
-                    flag = 1;
-                    break;
-                }
+        for (int i = 2; i <= halfNumberToCheck; i++) {
+            if (numberToCheck % i == 0) {
+                return false;
             }
-            if (flag == 1)
-                continue;
-            System.out.println("Number: " + numberToCheck + " Is a prime!!!");
-
         }
+        return true;
     }
-
-    private int getNumber() {
-        System.out.println("Enter a number and I will check if it is a prime number");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-    }
-
 }
