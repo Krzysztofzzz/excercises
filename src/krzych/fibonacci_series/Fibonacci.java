@@ -1,39 +1,23 @@
 package krzych.fibonacci_series;
 
-import java.util.Arrays;
-import java.util.Scanner;
+public class Fibonacci {
 
-public class Fibonacci implements Runnable {
-    @Override
-    public void run() {
-        while (true) {
-            int fibonnaciLength = scanLength();
-            if (fibonnaciLength <= 0) {
-                System.out.println("Enter positive number");
-                continue;
-            }
-            if (fibonnaciLength == 1) {
-                System.out.println("0");
-                continue;
-            }
-            if (fibonnaciLength == 2) {
-                System.out.println("[0 , 1]");
-                continue;
-            }
-
-            int[] fibonacciNumbers = new int[fibonnaciLength];
-            fibonacciNumbers[0] = 0;
-            fibonacciNumbers[1] = 1;
-            for (int i = 2; i < fibonnaciLength; i++) {
-                fibonacciNumbers[i] = fibonacciNumbers[i - 2] + fibonacciNumbers[i - 1];
-            }
-            System.out.println(Arrays.toString(fibonacciNumbers));
+    public int[] getFibonacci(int fibonacciLength) throws WrongNumberException {
+        if (fibonacciLength <= 0)
+            throw new WrongNumberException();
+        if (fibonacciLength == 1) {
+            return new int[]{0};
         }
-    }
+        if (fibonacciLength == 2) {
+            return new int[]{0, 1};
+        }
 
-    private int scanLength() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Fibonacci's length:");
-        return scanner.nextInt();
+        int[] fibonacciNumbers = new int[fibonacciLength];
+        fibonacciNumbers[0] = 0;
+        fibonacciNumbers[1] = 1;
+        for (int i = 2; i < fibonacciLength; i++) {
+            fibonacciNumbers[i] = fibonacciNumbers[i - 2] + fibonacciNumbers[i - 1];
+        }
+        return fibonacciNumbers;
     }
 }
