@@ -19,7 +19,7 @@ public class FactorialTest {
     }
 
     @Test
-    public void checkIterariveFactorial() {
+    public void checkIterativeFactorial() {
         Assert.assertEquals(1, factorial.factorialIterative(0));
         Assert.assertEquals(1, factorial.factorialIterative(1));
         Assert.assertEquals(2, factorial.factorialIterative(2));
