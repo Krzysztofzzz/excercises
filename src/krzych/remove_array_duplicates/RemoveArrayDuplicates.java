@@ -4,21 +4,19 @@ import java.util.Arrays;
 
 public class RemoveArrayDuplicates {
 
-    public int[] removeDuplicates(int[] arrayWithDuplicates) {
+    public Object[] removeDuplicates(Object[] arrayWithDuplicates) {
         if (arrayWithDuplicates.length == 0 || arrayWithDuplicates.length == 1)
             return arrayWithDuplicates;
-        int[] arrayWithoutDuplicates = new int[]{};
-        int checkedInt;
+        Object[] arrayWithoutDuplicates = new Object[]{};
         int position = 0;
         outerLoop:
         for (int i = 0; i < arrayWithDuplicates.length; i++) {
-            checkedInt = arrayWithDuplicates[i];
             for (int j = 0; j < arrayWithoutDuplicates.length; j++) {
-                if (arrayWithoutDuplicates[j] == checkedInt)
+                if (arrayWithoutDuplicates[j].equals(arrayWithDuplicates[i]))
                     continue outerLoop;
             }
             arrayWithoutDuplicates = addOneSlotToArray(arrayWithoutDuplicates);
-            arrayWithoutDuplicates[position] = checkedInt;
+            arrayWithoutDuplicates[position] = arrayWithDuplicates[i];
             position++;
         }
         System.out.println(Arrays.toString(arrayWithDuplicates));
@@ -26,8 +24,8 @@ public class RemoveArrayDuplicates {
         return arrayWithoutDuplicates;
     }
 
-    private int[] addOneSlotToArray(int[] arrayToExpand) {
-        int[] newArrayWithOneMoreSlot = new int[arrayToExpand.length + 1];
+    private Object[] addOneSlotToArray(Object[] arrayToExpand) {
+        Object[] newArrayWithOneMoreSlot = new Object[arrayToExpand.length + 1];
         for (int i = 0; i < arrayToExpand.length; i++) {
             newArrayWithOneMoreSlot[i] = arrayToExpand[i];
         }
