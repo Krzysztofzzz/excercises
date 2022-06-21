@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CountCharactersTest {
-    private CountCharacters countCharacters = new CountCharacters();
+    private final CountCharacters countCharacters = new CountCharacters();
 
     @Test
     public void returnNullWhenStringIsNull() {
