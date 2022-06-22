@@ -45,7 +45,7 @@ public class CountCharactersTest {
     }
 
     @Test
-    public void whenMultipleDifferentCharactersAreGivenReturnProperCountzxcv() {
+    public void whenTwoDifferentCharactersAreGivenReturnProperCount() {
         String input = "ab";
         String output = countCharacters.count(input);
         String expected = "a1b1";

@@ -35,7 +35,7 @@ public class ProfitCounterTest {
     public void whenThereIsNoProfitReturnZero() {
         int[] input = {5, 5, 5, 5, 5, 5, 5, 5};
         int output = profitCounter.findBiggestProfit(input);
-        int expected = 0;
+        int expected = -1;
         Assert.assertEquals(expected, output);
     }
 
@@ -60,6 +60,14 @@ public class ProfitCounterTest {
         int[] input = {6, 2, 9, 1, 5, 6, 16, 8, 2};
         int output = profitCounter.findBiggestProfit(input);
         int expected = 15;
+        Assert.assertEquals(expected, output);
+    }
+
+    @Test
+    public void whenInputIsMultipleNumbersDescendingReturnBiggestDifference() {
+        int[] input = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+        int output = profitCounter.findBiggestProfit(input);
+        int expected = -1;
         Assert.assertEquals(expected, output);
     }
 }
