@@ -43,4 +43,12 @@ public class CountCharactersTest {
         String expected = "a3B3d1h6";
         Assert.assertEquals(expected, output);
     }
+
+    @Test
+    public void whenMultipleDifferentCharactersAreGivenReturnProperCountzxcv() {
+        String input = "ab";
+        String output = countCharacters.count(input);
+        String expected = "a1b1";
+        Assert.assertEquals(expected, output);
+    }
 }

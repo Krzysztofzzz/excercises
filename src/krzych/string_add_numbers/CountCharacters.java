@@ -9,7 +9,7 @@ public class CountCharacters {
         String output = "";
         int count = 1;
         for (int i = 1; i < input.length(); i++) {
-            if (input.charAt(i) != charToAdd && i != input.length() - 1) {
+            if (input.charAt(i) != charToAdd) {
                 output += String.valueOf(charToAdd) + count;
                 count = 1;
                 charToAdd = input.charAt(i);
